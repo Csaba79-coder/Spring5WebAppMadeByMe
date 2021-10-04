@@ -1,6 +1,25 @@
 = Good to know!
 
-In general:
+== In general:
 
 http://localhost:8080/h2-console/
 
+== Set in application.properties (as far as default value is false!):
+
+spring.h2.console.enabled=true
+
+2021-10-04 17:42:13.976  INFO 17880 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+
+image::image-2021-10-04-17-49-38-502.png[]
+
+check if the url is the same as in your program! if not, change it!!! or you are not able to see anything of your tables!
+
+image::image-2021-10-04-17-51-12-013.png[]
+
+and then click on connect!!! result see bellow, your whole database:
+
+image::image-2021-10-04-17-53-24-235.png[]
+
+if you want to use, just click on PUBLISHER (it makes automatically the query ...) and click on run!
+
+image::image-2021-10-04-17-56-59-307.png[]

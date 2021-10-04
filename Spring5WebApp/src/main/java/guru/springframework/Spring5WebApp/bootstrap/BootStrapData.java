@@ -89,6 +89,6 @@ public class BootStrapData implements CommandLineRunner {
         System.out.println("Publisher DDD number of books: " + publisherDDD.getBooks().size());
         System.out.println("Publisher Wrox Press has books: " + wroxPress.getBooks().size());
         System.out.println("The two publisher has all together: "
-                + (publisherDDD.getBooks().size() + wroxPress.getBooks().size()) + " books.");
+                + (publisherDDD.getBooks().size() + wroxPress.getBooks().size()) + " books");
     }
 }
