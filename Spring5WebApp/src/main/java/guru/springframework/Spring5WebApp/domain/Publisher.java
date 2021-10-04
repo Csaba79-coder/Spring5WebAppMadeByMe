@@ -7,9 +7,10 @@ import java.util.Set;
 @Entity
 public class Publisher {
 
-    // a publisher in publishing many books and a book has in general one publisher!
-    // this relationship we are going to make! --> see bellow!
-    // Publisher will have a set of books, and a book will have a publisher property!
+
+//     a publisher in publishing many books and a book has in general one publisher!
+//     this relationship we are going to make! --> see bellow!
+//     Publisher will have a set of books, and a book will have a publisher property!
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

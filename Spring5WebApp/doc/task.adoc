@@ -23,3 +23,4 @@ image::image-2021-10-04-17-53-24-235.png[]
 if you want to use, just click on PUBLISHER (it makes automatically the query ...) and click on run!
 
 image::image-2021-10-04-17-56-59-307.png[]
+
