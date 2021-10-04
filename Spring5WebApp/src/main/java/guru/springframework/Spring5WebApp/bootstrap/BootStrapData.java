@@ -8,7 +8,6 @@ import guru.springframework.Spring5WebApp.repositories.AuthorRepository;
 import guru.springframework.Spring5WebApp.repositories.BookRepository;
 import guru.springframework.Spring5WebApp.repositories.PublisherRepository;
 import guru.springframework.Spring5WebApp.util.Print;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 // CommandLineRunner is an interface we would like to implement!
@@ -33,7 +32,6 @@ public class BootStrapData implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         new Print().printString(new CopyRight().addingCopyright());
-
 
         Author eric = new Author("Eric", "Evans");
         Book ddd = new Book("Domain Driven Design", "9780321125217");
