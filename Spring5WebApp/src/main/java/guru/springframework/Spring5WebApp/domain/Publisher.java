@@ -17,6 +17,14 @@ public class Publisher {
     public Publisher() {
     }
 
+    public Publisher(String name, String addressLine1, String city, String state, String zipCode) {
+        this.name = name;
+        this.addressLine1 = addressLine1;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
+    }
+
     public Publisher(Long id, String name, String addressLine1, String city, String state, String zipCode) {
         this.id = id;
         this.name = name;

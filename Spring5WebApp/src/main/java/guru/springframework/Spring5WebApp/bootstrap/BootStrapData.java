@@ -2,6 +2,7 @@ package guru.springframework.Spring5WebApp.bootstrap;
 
 import guru.springframework.Spring5WebApp.domain.Author;
 import guru.springframework.Spring5WebApp.domain.Book;
+import guru.springframework.Spring5WebApp.domain.Publisher;
 import guru.springframework.Spring5WebApp.repositories.AuthorRepository;
 import guru.springframework.Spring5WebApp.repositories.BookRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -42,5 +43,12 @@ public class BootStrapData implements CommandLineRunner {
 
         System.out.println("Started in Bootstrap");
         System.out.println("The number of books: " + bookRepository.count());
+
+        // Wrox Press Ltd. Arden House 1102 Warwick Road Acock's Green Birmingham; United Kingdom
+        // 1102 Warwick Road, Acocks Green, Birmingham, B27 6BH
+        Publisher wroxPress = new Publisher("Wrox Press Ltd.", "Arden House - 1102 Warwick Road",
+                "Acock's Green", "Birmingham, UK", " B27 6BH");
+
+        System.out.println(wroxPress);
     }
 }
