@@ -60,19 +60,35 @@ public class BootStrapData implements CommandLineRunner {
                 "Acock's Green", "Birmingham", " B27 6BH", "UK");
 
         // Addison-Wesley Professional, 75 Arlington Street Suite 300, Boston MA 02116 USA
-        Publisher publisher = new Publisher();
-        publisher.setName("Addison-Wesley Professional");
-        publisher.setAddressLine1("75 Arlington Street Suite 300");
-        publisher.setCity("Boston");
-        publisher.setState("MA, Massachusetts");
-        publisher.setZipCode("02116");
-        publisher.setCountry("USA");
+        Publisher publisherDDD = new Publisher();
+        publisherDDD.setName("Addison-Wesley Professional");
+        publisherDDD.setAddressLine1("75 Arlington Street Suite 300");
+        publisherDDD.setCity("Boston");
+        publisherDDD.setState("MA, Massachusetts");
+        publisherDDD.setZipCode("02116");
+        publisherDDD.setCountry("USA");
 
         publisherRepository.save(wroxPress);
-        publisherRepository.save(publisher);
+        publisherRepository.save(publisherDDD);
 
         System.out.println(wroxPress);
-        System.out.println(publisher);
+        System.out.println(publisherDDD);
         System.out.println("Publisher count: " + publisherRepository.count());
+
+        ddd.setPublisher(publisherDDD);
+        publisherDDD.getBooks().add(ddd);
+
+        noEJB.setPublisher(wroxPress);
+        wroxPress.getBooks().add(noEJB);
+
+        publisherRepository.save(publisherDDD);
+        bookRepository.save(ddd);
+        publisherRepository.save(wroxPress);
+        bookRepository.save(noEJB);
+
+        System.out.println("Publisher DDD number of books: " + publisherDDD.getBooks().size());
+        System.out.println("Publisher Wrox Press has books: " + wroxPress.getBooks().size());
+        System.out.println("The two publisher has all together: "
+                + (publisherDDD.getBooks().size() + wroxPress.getBooks().size()) + " books.");
     }
 }

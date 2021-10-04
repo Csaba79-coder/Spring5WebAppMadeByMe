@@ -1,9 +1,15 @@
 package guru.springframework.Spring5WebApp.domain;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Publisher {
+
+    // a publisher in publishing many books and a book has in general one publisher!
+    // this relationship we are going to make! --> see bellow!
+    // Publisher will have a set of books, and a book will have a publisher property!
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,6 +20,10 @@ public class Publisher {
     private String state;
     private String zipCode;
     private String country;
+
+    @OneToMany
+    @JoinColumn(name = "publisher_id")
+    private Set<Book> books = new HashSet<>();
 
     public Publisher() {
     }
@@ -83,6 +93,14 @@ public class Publisher {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
+    }
+
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
     }
 
     public String getCountry() {
