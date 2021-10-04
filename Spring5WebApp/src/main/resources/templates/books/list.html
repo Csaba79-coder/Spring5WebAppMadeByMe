@@ -14,8 +14,7 @@
         <th>Publisher</th>
     </tr>
 
-    <!--/*@thymesVar id="book" type="guru.springframework.Spring5WebApp.domain.Book"*/-->
-    <tr th:each="book : ${book}">
+    <tr th:each="book : ${books}">
         <td th:text="${book.id}">123</td>
         <td th:text="${book.title}"> Spring in Action</td>
         <td th:text="${book.publisher.name}">Wrox</td>
