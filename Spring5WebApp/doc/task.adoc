@@ -24,3 +24,10 @@ if you want to use, just click on PUBLISHER (it makes automatically the query ..
 
 image::image-2021-10-04-17-56-59-307.png[]
 
+=== templates.authors in list.html:
+
+image::image-2021-10-04-23-08-35-588.png[]
+
+If you have a problem in the file, just add # in front of the object's name! and then I deleted it! ... that helped!
+
+https://newbedev.com/spring-boot-thymeleaf-in-intellij-cannot-resolve-vars
