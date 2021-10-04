@@ -3,8 +3,12 @@ package guru.springframework.Spring5WebApp.bootstrap;
 import guru.springframework.Spring5WebApp.domain.Author;
 import guru.springframework.Spring5WebApp.domain.Book;
 import guru.springframework.Spring5WebApp.domain.Publisher;
+import guru.springframework.Spring5WebApp.module.CopyRight;
 import guru.springframework.Spring5WebApp.repositories.AuthorRepository;
 import guru.springframework.Spring5WebApp.repositories.BookRepository;
+import guru.springframework.Spring5WebApp.repositories.PublisherRepository;
+import guru.springframework.Spring5WebApp.util.Print;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 // CommandLineRunner is an interface we would like to implement!
@@ -15,14 +19,20 @@ public class BootStrapData implements CommandLineRunner {
 
     private final AuthorRepository authorRepository;
     private final BookRepository bookRepository;
+    private final PublisherRepository publisherRepository;
 
-    public BootStrapData(AuthorRepository authorRepository, BookRepository bookRepository) {
+    public BootStrapData(AuthorRepository authorRepository, BookRepository bookRepository,
+                         PublisherRepository publisherRepository) {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
+        this.publisherRepository = publisherRepository;
     }
 
     @Override
     public void run(String... args) throws Exception {
+
+        new Print().printString(new CopyRight().addingCopyright());
+
 
         Author eric = new Author("Eric", "Evans");
         Book ddd = new Book("Domain Driven Design", "9780321125217");
@@ -47,8 +57,22 @@ public class BootStrapData implements CommandLineRunner {
         // Wrox Press Ltd. Arden House 1102 Warwick Road Acock's Green Birmingham; United Kingdom
         // 1102 Warwick Road, Acocks Green, Birmingham, B27 6BH
         Publisher wroxPress = new Publisher("Wrox Press Ltd.", "Arden House - 1102 Warwick Road",
-                "Acock's Green", "Birmingham, UK", " B27 6BH");
+                "Acock's Green", "Birmingham", " B27 6BH", "UK");
+
+        // Addison-Wesley Professional, 75 Arlington Street Suite 300, Boston MA 02116 USA
+        Publisher publisher = new Publisher();
+        publisher.setName("Addison-Wesley Professional");
+        publisher.setAddressLine1("75 Arlington Street Suite 300");
+        publisher.setCity("Boston");
+        publisher.setState("MA, Massachusetts");
+        publisher.setZipCode("02116");
+        publisher.setCountry("USA");
+
+        publisherRepository.save(wroxPress);
+        publisherRepository.save(publisher);
 
         System.out.println(wroxPress);
+        System.out.println(publisher);
+        System.out.println("Publisher count: " + publisherRepository.count());
     }
 }

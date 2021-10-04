@@ -13,25 +13,28 @@ public class Publisher {
     private String city;
     private String state;
     private String zipCode;
+    private String country;
 
     public Publisher() {
     }
 
-    public Publisher(String name, String addressLine1, String city, String state, String zipCode) {
+    public Publisher(String name, String addressLine1, String city, String state, String zipCode, String country) {
         this.name = name;
         this.addressLine1 = addressLine1;
         this.city = city;
         this.state = state;
         this.zipCode = zipCode;
+        this.country = country;
     }
 
-    public Publisher(Long id, String name, String addressLine1, String city, String state, String zipCode) {
+    public Publisher(Long id, String name, String addressLine1, String city, String state, String zipCode, String country) {
         this.id = id;
         this.name = name;
         this.addressLine1 = addressLine1;
         this.city = city;
         this.state = state;
         this.zipCode = zipCode;
+        this.country = country;
     }
 
     public Long getId() {
@@ -44,6 +47,10 @@ public class Publisher {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getAddressLine1() {
@@ -78,6 +85,14 @@ public class Publisher {
         this.zipCode = zipCode;
     }
 
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
     @Override
     public String toString() {
         return "Publisher{" +
@@ -87,6 +102,7 @@ public class Publisher {
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 ", zipCode='" + zipCode + '\'' +
+                ", country='" + country + '\'' +
                 '}';
     }
 
