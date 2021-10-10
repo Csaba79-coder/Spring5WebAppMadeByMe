@@ -63,7 +63,7 @@
 	</build>
 
 	<scm>
-		<developerConnection>scm:git:git@github.com:Csaba79-coder/sfg-pet-clinic.git</developerConnection>
+		<developerConnection>scm:git:git@github.com:Csaba79-coder/Spring5WebAppMadeByMe.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
