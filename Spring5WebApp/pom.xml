@@ -57,8 +57,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${project.parent.version}</version>
 			</plugin>
 		</plugins>
 	</build>
+
+	<scm>
+		<developerConnection>scm:git:git@github.com:Csaba79-coder/sfg-pet-clinic.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
 
 </project>
